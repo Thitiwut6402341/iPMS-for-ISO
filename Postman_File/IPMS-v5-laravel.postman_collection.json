@@ -1,0 +1,2975 @@
+{
+	"info": {
+		"_postman_id": "1b562cf8-f680-45b0-a950-70856b52b887",
+		"name": "IPMS-v5-laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31393187",
+		"_collection_link": "https://gold-sunset-143741.postman.co/workspace/iPMS-for-ISO---Project~1131d70e-0d29-4c49-905b-528b475acf45/collection/31393187-1b562cf8-f680-45b0-a950-70856b52b887?action=share&source=collection_link&creator=31393187"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const { data: x } = pm.response.json();\r",
+									"if (x.length > 0) {\r",
+									"    const [{ token }] = x;\r",
+									"    pm.collectionVariables.set(\"auth_token\", `Bearer ${token}`);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"iot-center@snc.com\",\r\n    \"password\" : \"Snc@2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-in",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SignIn1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"Thitiwut@snc.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/sign-in",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"sign-in"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "SignIn2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"Pukrit@snc.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/sign-in",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"sign-in"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "SignIn3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"Suttawee@snc.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/sign-in",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"sign-in"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "SignIn4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"iot-center@snc.com\",\r\n    \"password\" : \"Snc@2024\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/sign-in",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"sign-in"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iot-center\",\r\n    \"email\":\"iot-center@snc.com\",\r\n    \"password\":\"Snc@2024\"\r\n    // \"package_level\":\"business\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-up",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const { data: x } = pm.response.json();\r",
+									"if (x.length > 0) {\r",
+									"    const [{ token }] = x;\r",
+									"    pm.collectionVariables.set(\"auth_token\", `Bearer ${token}`);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\":\"12345\",\r\n    \"new_password\" : \"54321\",\r\n    \"confirm_password\":\"54321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ipms/change-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ipms",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/forgot-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "getUserInSystem",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/accounts/get-user",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accounts",
+										"get-user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Accounts",
+					"item": [
+						{
+							"name": "AccountsList",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/accounts/get-accounts-list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accounts",
+										"get-accounts-list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddAccounts",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\":\"65db4a1eee7921a97c0376dc\",\r\n    \"team_id\": \"64995143e982b9f5270f98c5\",\r\n    \"position_id\": \"649952bee982b9f5270f98c7\",\r\n    \"name_th\": \"ธิติวุฒิ สถาพรบำรุงเผ่า\",\r\n    \"name_en\": \"thitiwut sathapornbumrungphao\",\r\n    \"employees_id\": \"6611004\",\r\n    \"work_start_date\": \"2023-11-01\",\r\n    \"date_of_birth\": \"1998-08-25\",\r\n    \"telephone\": \"0879592663\",\r\n    \"personal_email\": \"dollar2552@gmail.com\",\r\n    \"official_email\": \"thitiwut@sncformer.com\",\r\n    \"picture\": \"..\",\r\n    \"emergency_contact\": [\r\n        {\r\n            \"name\": \"Father Mother\",\r\n            \"tel\": \"023456789\"\r\n        }\r\n    ],\r\n    \"is_graduated\": true,\r\n    \"graduated_year\":\"2023\",\r\n    \"education_level\": [\r\n        \"Bachelor's\"\r\n    ],\r\n    \"university_id\": 17,\r\n    \"major\": \"Engineering\",\r\n    \"school_of\": \"Mechatronics\",\r\n    \"graduated_gpax\":\"3.81\",\r\n    // \"current_gpax\": \"4.0\",\r\n    \"resume_docs\": \"..\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/accounts/add-accounts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accounts",
+										"add-accounts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "AddAccounts",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"TeamID\": \"64995143e982b9f5270f98c5\",\r\n    \"PositionID\": \"649952bee982b9f5270f98c7\",\r\n    \"NameTH\": \"ธิติวุฒิ\",\r\n    \"NameEN\": \"Thitiwut\",\r\n    \"EmployeeID\": \"6611004\",\r\n    \"WorkStartDate\": \"2024-11-01\",\r\n    \"DateOfBirth\": \"1998-08-25\",\r\n    \"Telephone\": \"0879592663\",\r\n    \"PersonalEmail\": \"dollar2552@gmail.com\",\r\n    \"OfficialEmail\": \"thitiwut@snc-former.com\",\r\n    \"Picture\": \".....\",\r\n    \"EmergencyContact\": [\r\n        {\r\n            \"name\": \"Father Mother\",\r\n            \"tel\": \"0812345678\"\r\n        }\r\n    ],\r\n    \"IsGraduated\": true,\r\n    \"GreaduatedYear\": \"2023\",\r\n    \"EducationLevel\": [\r\n        \"Master\"\r\n    ],\r\n    \"UniversityID\": 17,\r\n    \"Major\": \"Engineering\",\r\n    \"SchoolOf\": \"Mechatronics\",\r\n    \"GraduatedGPAX\": \"3.81\",\r\n    // \"CurrentGPAX\": \"3.81\",\r\n    \"ResumeDocs\": \".....\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/accounts/add-accounts",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"accounts",
+												"add-accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "AddAccounts",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"TeamID\": \"64995143e982b9f5270f98c5\",\r\n    \"PositionID\": \"649952bee982b9f5270f98c7\",\r\n    \"NameTH\": \"อนุชา รำพึงนิจ\",\r\n    \"NameEN\": \"Anucha Rampeungnit\",\r\n    \"EmployeeID\": \"6408448\",\r\n    \"WorkStartDate\": \"2024-11-01\",\r\n    \"DateOfBirth\": \"1998-08-25\",\r\n    \"Telephone\": \"021345678\",\r\n    \"PersonalEmail\": \"Anucha@gmail.com\",\r\n    \"OfficialEmail\": \"Anucha-Ram@snc-former.com\",\r\n    \"Picture\": \".....\",\r\n    \"EmergencyContact\": [\r\n        {\r\n            \"name\": \"Father Mother\",\r\n            \"tel\": \"021345678\"\r\n        }\r\n    ],\r\n    \"IsGraduated\": false,\r\n    // \"GreaduatedYear\": \"2023\",\r\n    \"EducationLevel\": [\r\n        \"Bachelor's\"\r\n    ],\r\n    \"UniversityID\": 17,\r\n    \"Major\": \"Engineering\",\r\n    \"SchoolOf\": \"Mechatronics\",\r\n    \"CurrentGPAX\": \"4.0\",\r\n    \"ResumeDocs\": \".....\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/accounts/add-accounts",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"accounts",
+												"add-accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "AddAccounts",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"TeamID\": \"64995143e982b9f5270f98c5\",\r\n    \"PositionID\": \"649952bee982b9f5270f98c7\",\r\n    \"NameTH\": \"อนุชา รำพึงนิจ\",\r\n    \"NameEN\": \"Anucha Rampeungnit\",\r\n    \"EmployeeID\": \"6408448\",\r\n    \"WorkStartDate\": \"2024-11-01\",\r\n    \"DateOfBirth\": \"1998-08-25\",\r\n    \"Telephone\": \"0879592663\",\r\n    \"PersonalEmail\": \"dollar2552@gmail.com\",\r\n    \"OfficialEmail\": \"thitiwut@snc-former.com\",\r\n    \"Picture\": \".....\",\r\n    \"EmergencyContact\": [\r\n        {\r\n            \"name\": \"Father Mother\",\r\n            \"tel\": \"0812345678\"\r\n        }\r\n    ],\r\n    \"IsGraduated\": false,\r\n    \"GreaduatedYear\": \"2023\",\r\n    \"EducationLevel\": [\r\n        \"Master\"\r\n    ],\r\n    \"UniversityID\": 17,\r\n    \"Major\": \"Engineering\",\r\n    \"SchoolOf\": \"Mechatronics\",\r\n    \"GraduatedGPAX\": \"3.81\",\r\n    // \"CurrentGPAX\": \"3.81\",\r\n    \"ResumeDocs\": \".....\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/accounts/add-accounts",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"accounts",
+												"add-accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "editAccounts",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account_id\":\"65e2c79da5fe3ba7010a266c\",\r\n    \"team_id\": \"64995143e982b9f5270f98c5\",\r\n    \"position_id\": \"649952bee982b9f5270f98c7\",\r\n    \"name_th\": \"อนุชา รำพึงนิจ\",\r\n    \"name_en\": \"Anucha Rampeungnit\",\r\n    \"employees_id\": \"6408448\",\r\n    \"work_start_date\": \"2024-11-01\",\r\n    \"date_of_birth\": \"1998-08-25\",\r\n    \"telephone\": \"0879592663\",\r\n    \"personal_email\": \"Anucha@gmail.com\",\r\n    \"official_email\": \"Anucha-Ram@snc-former.com\",\r\n    \"picture\": \"..\",\r\n    \"emergency_contact\": [\r\n        {\r\n            \"name\": \"Father Mother\",\r\n            \"tel\": \"023456789\"\r\n        }\r\n    ],\r\n    \"is_graduated\": false,\r\n    // \"greaduated_year\":\"\",\r\n    \"education_level\": [\r\n        \"Bachelor's\"\r\n    ],\r\n    \"university_id\": 17,\r\n    \"major\": \"Engineering\",\r\n    \"school_of\": \"Mechatronics\",\r\n    // \"graduated_gpax\":\"\",\r\n    \"current_gpax\": \"5.00\",\r\n    \"resume_docs\": \"..\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/accounts/edit-accounts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accounts",
+										"edit-accounts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "editAccounts for Graduated = false",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"AccountID\" : \"65d6f89b4207737bf204f195\",          // required\r\n    \"NameTH\": \"Edit อนุชา รำพึงนิจ\",\r\n    \"NameEN\": \"Edit Anucha Rampeungnit\",\r\n    \"EmployeeID\": \"6408448\",\r\n    \"WorkStartDate\": \"2024-11-01\",\r\n    \"DateOfBirth\": \"1998-08-25\",\r\n    \"Telephone\": \"0879592663\",\r\n    \"PersonalEmail\": \"Anucha-Ram@gmail.com\",\r\n    \"OfficialEmail\": \"Anucha@snc-former.com\",\r\n    \"Picture\": \".....\",\r\n    \"EmergencyContact\": [\r\n        {\r\n            \"name\": \"Father Mother\",\r\n            \"tel\": \"0812345678\"\r\n        }\r\n    ],\r\n    \"IsGraduated\": false,\r\n    // \"GreaduatedYear\": \"2023\",\r\n    \"EducationLevel\": [\r\n        \"Bachelor's\"\r\n    ],\r\n    \"UniversityID\": 17,\r\n    \"Major\": \"Engineering\",\r\n    \"SchoolOf\": \"Mechatronics\",\r\n    // \"GraduatedGPAX\": \"3.81\",\r\n    \"CurrentGPAX\": \"4.9\",\r\n    \"ResumeDocs\": \".....\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/accounts/edit-accounts",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"accounts",
+												"edit-accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "editAccounts for Graduated = true",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"AccountID\": \"65d6f1e24207737bf204f190\",            // required\r\n    \"NameTH\": \"Edit ธิติวุฒิ\",\r\n    \"NameEN\": \"Edit Thitiwut\",\r\n    \"EmployeeID\": \"Edit 6611004\",\r\n    \"WorkStartDate\": \"2024-11-01\",\r\n    \"DateOfBirth\": \"1998-08-25\",\r\n    \"Telephone\": \"Edit 0879592663\",\r\n    \"PersonalEmail\": \"Edit dollar2552@gmail.com\",\r\n    \"OfficialEmail\": \"thitiwut@snc-former.com\",\r\n    \"Picture\": \".....\",\r\n    \"EmergencyContact\": [\r\n        {\r\n            \"name\": \"Edit Father Mother\",\r\n            \"tel\": \"0812345678\"\r\n        }\r\n    ],\r\n    \"IsGraduated\": true,\r\n    \"GreaduatedYear\": \"2023\",\r\n    \"EducationLevel\": [\r\n        \"Master\"\r\n    ],\r\n    \"UniversityID\": 17,\r\n    \"Major\": \"Engineering\",\r\n    \"SchoolOf\": \"Mechatronics\",\r\n    \"GraduatedGPAX\": \"3.81\",\r\n    // \"CurrentGPAX\": \"3.81\",\r\n    \"ResumeDocs\": \".....\",\r\n    \"JobDescriptionDocs\":\"1.Software Dev 2.Backend php laravel\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/accounts/edit-accounts",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"accounts",
+												"edit-accounts"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "editAccounts for Graduated = true",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account_id\":\"65d87d3f716be78b470af38b\",\r\n    \"team_id\": \"64995143e982b9f5270f98c5\",\r\n    \"position_id\": \"649952bee982b9f5270f98c7\",\r\n    \"name_th\": \"อนุชา รำพึงนิจ\",\r\n    \"name_en\": \"Anucha Rampeungnit\",\r\n    \"employees_id\": \"6408448\",\r\n    \"work_start_date\": \"2024-11-01\",\r\n    \"date_of_birth\": \"1998-08-25\",\r\n    \"telephone\": \"0879592663\",\r\n    \"personal_email\": \"Anucha@gmail.com\",\r\n    \"official_email\": \"Anucha-Ram@snc-former.com\",\r\n    \"picture\": \"..\",\r\n    \"emergency_contact\": [\r\n        {\r\n            \"name\": \"Father Mother\",\r\n            \"tel\": \"023456789\"\r\n        }\r\n    ],\r\n    \"is_graduated\": true,\r\n    \"greaduated_year\":\"2023\",\r\n    \"education_level\": [\r\n        \"Bachelor's\"\r\n    ],\r\n    \"university_id\": 17,\r\n    \"major\": \"Engineering\",\r\n    \"school_of\": \"Mechatronics\",\r\n    \"graduated_gpax\":\"6.0\",\r\n    // \"current_gpax\": \"5.00\",\r\n    \"resume_docs\": \"..\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/accounts/edit-accounts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accounts",
+										"edit-accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAccounts",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/accounts/delete-accounts?account_id=65e2c79da5fe3ba7010a266c",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accounts",
+										"delete-accounts"
+									],
+									"query": [
+										{
+											"key": "account_id",
+											"value": "65e2c79da5fe3ba7010a266c"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Role Responsibility",
+					"item": [
+						{
+							"name": "getListRoleResponse",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/accounts/get-list-role-response",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"accounts",
+										"get-list-role-response"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Teamspace Management",
+			"item": [
+				{
+					"name": "Teamspaces",
+					"item": [
+						{
+							"name": "getTeamSpace",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/team-space/get",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"team-space",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createTeamSpace",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teamspace_name\": \"Test Create New Team space \", // required\r\n    \"description\": [\r\n        \"Test 14 iPMS Project for ISO\",\r\n        \"Test Array in desc\"\r\n    ], // required\r\n    \"invite_user\": [\r\n        \"dollar2552@gmail.com\",\r\n        \"thitiwut@sncformer.com\"\r\n    ],\r\n    \"members\": [\r\n        \"65d80287e586be2f6a040002\",\r\n        \"65d802d7e586be2f6a040006\",\r\n        \"65db4a1eee7921a97c0376dc\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/team-space/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"team-space",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editTeamSpace",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teamspace_id\": \"65dfea5fbe296385b3020596\", // required\r\n    \"teamspace_name\": \"TestEditTeamSpace\", // required\r\n    \"description\": [\r\n        \"TestEditTeamSpace\",\r\n        \"In array format\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/team-space/edit",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"team-space",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteTeamSpace",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/team-space/delete?teamspace_id=65e2bf65a5fe3ba7010a2665",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"team-space",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "teamspace_id",
+											"value": "65e2bf65a5fe3ba7010a2665"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Statement of work Management",
+			"item": [
+				{
+					"name": "statementList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/statement-of-work/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"statement-of-work",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newStatement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"teamspace_id\": \"65e2d1b6a5fe3ba7010a2673\",\r\n    \"project_type\": \"CoDE-SOFTWARE: LICENSE 3MTYP\",\r\n    \"project_name\": \"iCRS: Customer Registration System\",\r\n    \"customer_name\": \"900006 SNC Serenity Company Limited\",\r\n    \"customer_contact\": [\r\n        {\r\n            \"name\": \"Thitiwut\",\r\n            \"email\": \"thitiwut@snc-former.com\",\r\n            \"phone_number\": \"081234567\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"sap_code\": null,\r\n    \"introduction_of_project\": \"This report outlines the plan for the implementation of a comprehensive Customer Registration Platform: iCRS, aimed at streamlining and enhancing the registration process for customers. The platform is designed to incorporate four essential functions: an Online Registration System, Basic Assessment System, Financial Assessment System, Online Approval System, and future compatibility with SAP system integration\",\r\n    \"list_of_introduction\": [\r\n        \"The Online Registration System will provide a user-friendly interface for customers to register their details electronically.\",\r\n        \"The Basic Assessment System will facilitate the initial evaluation of customer registrations to determine eligibility and basic requirements.\",\r\n        \"The Financial Assessment System will delve deeper into the financial aspects of customer registrations\"\r\n    ],\r\n    \"scope_of_project\": [\"Need to test add scope of project\",\"Test 2\",\"Test 3\"],\r\n    \"objective_of_project\": [\"Need to test add objective of project\",\"Test 2\",\"Test 3\"],\r\n    \"cost_estimation\": [\r\n        {\r\n            \"raw_materials\": 2000,\r\n            \"direct_cost\": 50000,\r\n            \"overhead_cost\": 80000,\r\n            \"gross_profit\": 3400,\r\n            \"currency\": \"baht\"\r\n        }\r\n    ],\r\n    \"start_date\": \"2024-02-23\",\r\n    \"end_date\": \"2024-02-29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/statement-of-work/new",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"statement-of-work",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editStatement",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"statement_of_work_id\":\"65e2de58a5fe3ba7010a267e\",      // required\r\n    \"project_id\": \"65e2de58a5fe3ba7010a267d\",              // required\r\n    \"project_type\": \"Edit CoDE-SOFTWARE: LICENSE 3MTYP\",\r\n    \"project_name\": \"Edit 2222\",\r\n    \"customer_name\": \"900006 SNC Serenity Company Limited\",\r\n    \"customer_contact\": [\r\n        {\r\n            \"name\": \"Edit Thitiwut\",\r\n            \"email\": \"Edit thitiwut@snc-former.com\",\r\n            \"phone_number\": \"Edit 081234567\",\r\n            \"position\": \"Edit Engineer\"\r\n        }\r\n    ],\r\n    \"sap_code\": \"40008854\",\r\n    \"introduction_of_project\": \"This report outlines the plan for the implementation of a comprehensive Customer Registration Platform: iCRS, aimed at streamlining and enhancing the registration process for customers. The platform is designed to incorporate four essential functions: an Online Registration System, Basic Assessment System, Financial Assessment System, Online Approval System, and future compatibility with SAP system integration\",\r\n    \"list_of_introduction\": [\r\n        \"The Online Registration System will provide a user-friendly interface for customers to register their details electronically.\",\r\n        \"The Basic Assessment System will facilitate the initial evaluation of customer registrations to determine eligibility and basic requirements.\",\r\n        \"The Financial Assessment System will delve deeper into the financial aspects of customer registrations\"\r\n    ],\r\n    \"scope_of_project\": [\r\n        \"Edit Need to test add scope of project\",\r\n        \"Edit Test 2\"\r\n    ],\r\n    \"objective_of_project\": [\r\n        \"Need to test add objective of project\",\r\n        \"Edit Test 2\",\r\n        \"Edit Test 3\",\r\n        \"Edit Test 4\"\r\n    ],\r\n    \"cost_estimation\": [\r\n        {\r\n            \"raw_materials\": 9999,\r\n            \"direct_cost\": 55555,\r\n            \"overhead_cost\": 88888,\r\n            \"gross_profit\": 3333,\r\n            \"currency\": \"USD\"\r\n        }\r\n    ],\r\n    \"start_date\": \"2024-02-23\",\r\n    \"end_date\": \"2024-03-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/statement-of-work/edit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"statement-of-work",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStatement",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"statement_of_work_id\":\"65e2d819a5fe3ba7010a2678\",      // required\r\n    \"project_id\": \"65e2d819a5fe3ba7010a2677\",              // required\r\n    \"project_type\": \"Edit CoDE-SOFTWARE: LICENSE 3MTYP\",\r\n    \"project_name\": \"Edit iCRS: Customer Registration System\",\r\n    \"customer_name\": \"900006 SNC Serenity Company Limited\",\r\n    \"customer_contact\": [\r\n        {\r\n            \"name\": \"Edit Thitiwut\",\r\n            \"email\": \"Edit thitiwut@snc-former.com\",\r\n            \"phone_number\": \"Edit 081234567\",\r\n            \"position\": \"Edit Engineer\"\r\n        }\r\n    ],\r\n    \"sap_code\": \"40008854\",\r\n    \"introduction_of_project\": \"This report outlines the plan for the implementation of a comprehensive Customer Registration Platform: iCRS, aimed at streamlining and enhancing the registration process for customers. The platform is designed to incorporate four essential functions: an Online Registration System, Basic Assessment System, Financial Assessment System, Online Approval System, and future compatibility with SAP system integration\",\r\n    \"list_of_introduction\": [\r\n        \"The Online Registration System will provide a user-friendly interface for customers to register their details electronically.\",\r\n        \"The Basic Assessment System will facilitate the initial evaluation of customer registrations to determine eligibility and basic requirements.\",\r\n        \"The Financial Assessment System will delve deeper into the financial aspects of customer registrations\"\r\n    ],\r\n    \"scope_of_project\": [\r\n        \"Edit Need to test add scope of project\",\r\n        \"Edit Test 2\"\r\n    ],\r\n    \"objective_of_project\": [\r\n        \"Need to test add objective of project\",\r\n        \"Edit Test 2\",\r\n        \"Edit Test 3\",\r\n        \"Edit Test 4\"\r\n    ],\r\n    \"cost_estimation\": [\r\n        {\r\n            \"raw_materials\": 9999,\r\n            \"direct_cost\": 55555,\r\n            \"overhead_cost\": 88888,\r\n            \"gross_profit\": 3333,\r\n            \"currency\": \"USD\"\r\n        }\r\n    ],\r\n    \"start_date\": \"2024-02-23\",\r\n    \"end_date\": \"2024-03-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/statement-of-work/delete?statement_of_work_id=65e2da47a5fe3ba7010a267c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"statement-of-work",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "statement_of_work_id",
+									"value": "65e2da47a5fe3ba7010a267c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateObjectives",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"statement_of_work_id\": \"65dc0fb0d5056036310a6707\",\r\n    \"objective_of_project\": [\r\n        \"1 test\",\r\n        \"2 test\",\r\n        \"3 test\",\r\n        \"4 test\",\r\n        \"5 test\",\r\n        \"6 test\",\r\n        \"7 test\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project/update-objectives",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project",
+								"update-objectives"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateScopes",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"statement_of_work_id\":\"65dc0fb0d5056036310a6707\",\r\n    \"scope_of_project\": [\r\n        \"1 test\",\r\n        \"2 test\",\r\n        \"3 test\",\r\n        \"4 test\",\r\n        \"5 test\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project/update-scopes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project",
+								"update-scopes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Setting Management",
+			"item": [
+				{
+					"name": "Product Type",
+					"item": [
+						{
+							"name": "getProductType",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/get-product-type",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"get-product-type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addProductType",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_type\": \"CoDE-SOFTWARE: 1MTYP\",\r\n    \"description\": \"test desc.\", // don't required\r\n    \"work_center_issue\": [\r\n        {\r\n            \"name\": \"Test add issue in WC1\",\r\n            \"day\": 7\r\n        },\r\n        {\r\n            \"name\": \"Test add issue in WC2\",\r\n            \"day\": 7\r\n        },\r\n        {\r\n            \"name\": \"Test add issue in WC3\",\r\n            \"day\": 30\r\n        },\r\n        {\r\n            \"name\": \"Test add issue in WC4\",\r\n            \"day\": 30\r\n        }\r\n    ],\r\n    \"day_to_complete\": 30, // required\r\n    \"cost_estimation\": [\r\n        {\r\n            \"raw_materials\": 2000,\r\n            \"direct_cost\": 50000,\r\n            \"overhead_cost\": 80000,\r\n            \"gross_profit\": 3400,\r\n            \"currency\": \"baht\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/add-product-type",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"add-product-type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editProductType",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_type_id\": \"65dedafb4f55702b590f0adf\", // required\r\n    \"product_type\": \"Edit CoDE-SOFTWARE: LICENSE 7Day Type\", // don't required\r\n    \"description\": \"Edit test desc 1234\", // don't required\r\n    \"work_center_issue\": [ // don't required\r\n        {\r\n            \"name\": \"Test Edit add issue in WC1\",\r\n            \"days\": 15\r\n        },\r\n        {\r\n            \"name\": \"Test Edit add issue in WC2\",\r\n            \"days\": 30\r\n        },\r\n        {\r\n            \"name\": \"Test Edit add issue in WC3\",\r\n            \"days\": 45\r\n        }\r\n    ],\r\n    \"day_to_complete\": 7,\r\n    \"cost_estimation\": [\r\n        {\r\n            \"raw_materials\": 1000,\r\n            \"direct_cost\": 500,\r\n            \"overhead_cost\": 6500,\r\n            \"gross_profit\": 12500,\r\n            \"currency\": \"EUR\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/edit-product-type",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"edit-product-type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteProductType",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/delete-product-type?product_type_id=65d88ee9716be78b470af391",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"delete-product-type"
+									],
+									"query": [
+										{
+											"key": "product_type_id",
+											"value": "65d88ee9716be78b470af391"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Label",
+					"item": [
+						{
+							"name": "getLabel",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/get-label",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"get-label"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addLabel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"color\":\"test\",\r\n    \"label_name\":null,\r\n    \"group\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/add-label",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"add-label"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editLabel",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"label_id\": \"65dc72ead5056036310a671f\",         // required\r\n    \"color\": \"Edit test\",\r\n    \"label_name\": null,\r\n    \"group\": \"Edit test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/edit-label",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"edit-label"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteLabel",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/delete-label?label_id=65dc7260d5056036310a671e",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"delete-label"
+									],
+									"query": [
+										{
+											"key": "label_id",
+											"value": "65dc7260d5056036310a671e"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Member",
+					"item": [
+						{
+							"name": "addMember",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teamspace_id\": \"65dc386fd5056036310a6711\",\r\n    \"teamspace_code\": \"0005\",\r\n    \"members\": [\r\n        \"ASD\"\r\n        // \"65cec706e6a070ece4046a8c\",\r\n        // \"65d5939ef18dc7c8d8092ac7\",\r\n        // \"65d593c6f18dc7c8d8092ac8\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/add-teamspace-member",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"add-teamspace-member"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteMember",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teamspace_id\": \"65dc386fd5056036310a6711\",\r\n    \"teamspace_code\": \"0005\",\r\n    \"members\": [\r\n        // \"ASD\"\r\n        // \"65d593c6f18dc7c8d8092ac8\"\r\n        // \"65cec71ee6a070ece4046a8d\",\r\n        \"65d5939ef18dc7c8d8092ac7\"\r\n        // \"65d593c6f18dc7c8d8092ac8\",\r\n        // \"5.test\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/delete-teamspace-member",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"delete-teamspace-member"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "editMember",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"teamspace_id\":\"65d59c05f18dc7c8d8092ad3\",\r\n    \"teamspace_code\":\"0013\",\r\n    \"member\": [\r\n        \"65d593c6f18dc7c8d8092ac8\",\"65cec706e6a070ece4046a8c\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/team-space/edit-member",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"team-space",
+												"edit-member"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "addInvite",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teamspace_id\": \"65dc386fd5056036310a6711\",\r\n    \"teamspace_code\": \"0005\",\r\n    \"invite_user\": [ \"test@gmai.com\"\r\n        // \"dollar2552@gmail.com\",\r\n        // \"thitiwut@snc-former.com\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/add-invite-user",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"add-invite-user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteInvite",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teamspace_id\": \"65dc386fd5056036310a6711\",\r\n    \"teamspace_code\": \"0005\",\r\n    \"invite_user\": [\"test@gmai.com\"\r\n        // \"dollar2552@gmail.com\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/delete-invite-user",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"delete-invite-user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "editMember",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"teamspace_id\":\"65d59c05f18dc7c8d8092ad3\",\r\n    \"teamspace_code\":\"0013\",\r\n    \"member\": [\r\n        \"65d593c6f18dc7c8d8092ac8\",\"65cec706e6a070ece4046a8c\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/team-space/edit-member",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"team-space",
+												"edit-member"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Status",
+					"item": [
+						{
+							"name": "addNewStatusGroup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status_group\":\"Canceled\",\r\n    \"status\":[\"Canceled\",\"Rejected\",\"Duplicate\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/add-new-status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"add-new-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStatusGroup",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/get-status-group",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"get-status-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "NewStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status_group_id\":\"65e02f3ebe296385b30205af\",\r\n    \"new_status\":[\"test insert new status\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/new-status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"new-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status_group_id\":\"65e02f3ebe296385b30205af\",\r\n    \"new_status\":[\"test insert new status\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/setting/delete-status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"setting",
+										"delete-status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Project Management",
+			"item": [
+				{
+					"name": "Prooject Issue",
+					"item": [
+						{
+							"name": "getProjectIssue",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/get-project-issue",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"get-project-issue"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addProjectIssue",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65dc0fb0d5056036310a6707\",\r\n    // \"parent_id\":\"\",\r\n    \"teamspace_id\": \"65dfea5fbe296385b3020596\",\r\n    \"issue_name\": \"Test new Teamspace add Issue in iPMS\",\r\n    \"description\": \"testttt test test test test test\",\r\n    \"iso_process\": \"iso_process test test iso_process test test\",\r\n    \"difficulty_level\": \"BEGINNER\",\r\n    \"sub_issue\": \"Test main topic\",\r\n    \"status_group\": \"Started\",\r\n    \"status\": \"pending\",\r\n    \"assigned\": [\r\n        \"65cec71ee6a070ece4046a8d\",\r\n        \"65cec706e6a070ece4046a8c\"\r\n    ],\r\n    \"priority\": \"high\",\r\n    \"labels\": \"test labels\",\r\n    \"tag_status\": \"test tag status\",\r\n    \"tags\": \"test tags\", // nullable\r\n    \"require_check_by\": \"65d802b8e586be2f6a040003\",\r\n    \"link\": [\r\n        {\r\n            \"title\": \"1.Test post link in system\",\r\n            \"url\": \"https://...............\"\r\n        },\r\n        {\r\n            \"title\": \"2.Test post link in system\",\r\n            \"url\": \"https://...............\"\r\n        }\r\n    ],\r\n    \"comments\": [           // nullable\r\n        {\r\n            \"user_id\": \"65d802c3e586be2f6a040004\",\r\n            \"comment\": \" test coment in issue\",\r\n            \"comment_at\": \"2024-03-01T16:25:02\"\r\n        },\r\n            {\r\n            \"user_id\": \"65d802c3e586be2f6a040004\",\r\n            \"comment\": \" test coment in issue\",\r\n            \"comment_at\": \"2024-03-01T16:25:02\"\r\n        }\r\n    ],\r\n    \"start_date\": \"2024-02-19\",\r\n    \"end_date\": \"2024-03-03\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/add-project-issue",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"add-project-issue"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editProjectIssue",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_issue_id\": \"65e01ee7be296385b30205a5\",\r\n\r\n    \"issue_name\": \"asaEdit 1231231 Test new Teamspace add Issue in iPMS\",\r\n    \"description\": \"asaEdit 123123\",\r\n    \"iso_process\": \"asaEdit iso_process 123123 test test\",\r\n    \"difficulty_level\": \"INTERMEDIATE\",\r\n    \"sub_issue\": \"asa Edit Test main topic\",\r\n    \"status_group\": \"Started\",\r\n    \"status\": \"pending\",\r\n    \"assigned\": [\r\n        \"65cec71ee6a070ece4046a8d\",\r\n        \"65cec706e6a070ece4046a8c\",\"65d802d7e586be2f6a040006\"\r\n    ],\r\n    \"priority\": \"high\",\r\n    \"labels\": \"test labels\",\r\n    \"tag_status\": \"test tag status\",\r\n    \"tags\": \"test tags\", // nullable\r\n    \"require_check_by\": \"65d802b8e586be2f6a040003\",\r\n    \"link\": [\r\n        {\r\n            \"title\": \"1.Test post link in system\",\r\n            \"url\": \"https://...............\"\r\n        },\r\n        {\r\n            \"title\": \"2.Test post link in system\",\r\n            \"url\": \"https://...............\"\r\n        },\r\n                {\r\n            \"title\": \"3. post link in system\",\r\n            \"url\": \"https://.sdfgsdfgssdfgsdfcxb;\"\r\n        }\r\n    ],\r\n    \"comments\": [\r\n        {\r\n            \"user_id\": \"65d802c3e586be2f6a040004\",\r\n            \"comment\": \"Edit test coment in issue\",\r\n            \"comment_at\": \"2024-03-01T7:35:02\"\r\n        },\r\n             {\r\n            \"user_id\": \"65d802c3e586be2f6a040004\",\r\n            \"comment\": \"Edit test coment in issue\",\r\n            \"comment_at\": \"2024-03-01T7:35:02\"\r\n        }\r\n    ],\r\n    \"start_date\": \"2024-02-25\",\r\n    \"end_date\": \"2024-03-03\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/edit-project-issue",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"edit-project-issue"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteProjectIssue",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/delete-project-issue?project_issue_id=65e01ee7be296385b30205a5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"delete-project-issue"
+									],
+									"query": [
+										{
+											"key": "project_issue_id",
+											"value": "65e01ee7be296385b30205a5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Project Sub Issue",
+					"item": [
+						{
+							"name": "getSubTasks",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/get-sub-tasks",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"get-sub-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addSubTasks",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_issue_id\": \"65dda2ee2834494709018853\",\r\n    \"project_id\": \"65dc0fb0d5056036310a6707\",\r\n    \"teamspace_id\": \"65dc386fd5056036310a6711\",\r\n    \"task_name\": \"test add new sub task aaaaaaaa\",\r\n    \"issue_type\": \"closed\",\r\n    \"assigned\": [\r\n        \"65cec706e6a070ece4046a8c\",\r\n        \"65cec706e6a070ece4046a8c\"\r\n    ], // nullable\r\n    \"priority\": \"low\", \r\n    \"tag_status\": null, // nullable\r\n    \"end_date\": \"2024-03-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/add-sub-tasks",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"add-sub-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editSubTasks",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_sub_task_id\": \"65dc6da9d5056036310a671b\", // required\r\n    \"task_name\": \"test edit sub tasks\",\r\n    \"issue_type\": \"in progress\",\r\n    \"assigned\": [\r\n        \"65cec71ee6a070ece4046a8d\"\r\n    ],\r\n    \"priority\": \"high\",\r\n    \"tag_status\": \"test edit 3\",\r\n    \"end_date\": \"2024-03-02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/edit-sub-tasks",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"edit-sub-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSubTasks",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/delete-sub-tasks?project_sub_task_id=65dc6da9d5056036310a671b",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										"delete-sub-tasks"
+									],
+									"query": [
+										{
+											"key": "project_sub_task_id",
+											"value": "65dc6da9d5056036310a671b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "projectsList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project/projects-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project",
+								"projects-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project Planing Management",
+			"item": [
+				{
+					"name": "getProjectPlaning",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project-plan/get-planing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project-plan",
+								"get-planing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "newProjectPlaning",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"statement_of_work_id\":\"65e2de58a5fe3ba7010a267e\",\r\n    \"project_id\": \"65e2de58a5fe3ba7010a267d\",\r\n    // \"job_order\": \"ABC123456\",        // nullable\r\n    \"project_repo\": \"Test project repo\",\r\n    \"project_backup\": \"Test project backup\",\r\n    // \"system_requirement\": [\r\n    //     \"1.need calculate autonomous\",\r\n    //     \"2.need to complicate\",\r\n    //     \"test need to complicated\"\r\n    // ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"account_id\": \"65e2d4a8a5fe3ba7010a2676\",      // thitiwut\r\n            \"role_id\": \"65def380ef7c1b0449c207dc\"          // PMO\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project-plan/add-planing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project-plan",
+								"add-planing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edtProjectPlaning",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_plan_id\": \"65e2ef05a5fe3ba7010a2686\", // required\r\n    \"project_repo\": \"Edit Test project repo\",\r\n    \"project_backup\": \"Edit Test project backup\",\r\n    \"job_order\": \"Edit SAP01234\",\r\n    \"system_requirement\": [\r\n        \"Edit 1.need calculate autonomous\",\r\n        \"Edit 2.need to complicate\",\r\n        \"Edit 3.need to complicate\",\r\n        \"Edit 4.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"Edit 1.test\",\r\n        \"Edit 2.test\",\r\n        \"Edit 3.test\",\r\n        \"Edit 4.test\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"account_id\": \"65e2d4a8a5fe3ba7010a2676\", // thitiwut\r\n            \"role_id\": \"65def3fbef7c1b0449c207e0\" // TEST\r\n        },\r\n        {\r\n            \"account_id\": \"65e2d4a8a5fe3ba7010a2676\", // thitiwut\r\n            \"role_id\": \"65def380ef7c1b0449c207dc\" // PMO\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"Edit php\",\r\n        \"Edit nodeJS\",\r\n        \"Edit laravel\",\r\n        \"React\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project-plan/edit-planing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project-plan",
+								"edit-planing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProjectPlaning",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project-plan/delete-planing?project_plan_id=65e2f032a5fe3ba7010a2687",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project-plan",
+								"delete-planing"
+							],
+							"query": [
+								{
+									"key": "project_plan_id",
+									"value": "65e2f032a5fe3ba7010a2687"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requirementPlaning",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_id\":\"65d8678c716be78b470af386\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project-plan/get-planing-req",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project-plan",
+								"get-planing-req"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifiedPlaning",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_plan_id\":\"65e05015be296385b30205b5\",\r\n    \"is_verified\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project-plan/verified-planing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project-plan",
+								"verified-planing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validatedPlaning",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_plan_id\":\"65e05015be296385b30205b5\",\r\n    \"is_validated\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/project-plan/validated-planing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"project-plan",
+								"validated-planing"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Traceability Management",
+			"item": [
+				{
+					"name": "addNewTraceability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_id\": \"65dc0fb0d5056036310a6707\", // required\r\n    \"traceability_data\": [\r\n        {\r\n            \"requirment_id\": \"REQ_001\",\r\n            \"software_design\": null,\r\n            \"software_component\": \"Test\",\r\n            \"test_case_id\": \"65ddc751ee7921a97c037a42\"\r\n        },\r\n        {\r\n            \"requirment_id\": \"REQ_002\",\r\n            \"software_design\": \"Test Test\",\r\n            \"software_component\": null,\r\n            \"test_case_id\": \"65ded0dfee7921a97c037b42\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/traceability/new",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"traceability",
+								"new"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65d86861716be78b470af388\",\r\n    \"job_order\": \"ABC123456\",\r\n    \"system_requirement\": [\r\n        \"1.need calculate autonomous\",\r\n        \"2.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\",\r\n        \"4.Test Test TEST\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "editAndDeleteTraceability",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"traceability_id\": \"65dede044f55702b590f0ae4\", // required\r\n    \"traceability_data\": [\r\n        {\r\n            \"requirment_id\": \"REQ_100 test edit\",\r\n            \"software_design\": \"123 ABC TEST\",\r\n            \"software_component\": \"Test\",\r\n            \"test_case_id\": \"65ddc751ee7921a97c037a42\"\r\n        },\r\n        {\r\n            \"requirment_id\": \"REQ_200 test delete\",\r\n            \"software_design\": null,\r\n            \"software_component\": null,\r\n            \"test_case_id\": \"65ded0dfee7921a97c037b42\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/traceability/edit-delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"traceability",
+								"edit-delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_name\": \"project Plan 01 test create new \",\r\n    \"job_order\": \"SAP0123\",\r\n    \"system_req\": [\r\n        \"test need calculate autonomous\",\r\n        \"test need to complicate\"\r\n    ],\r\n    \"requiremet_details\": [\r\n        \"need to login with LDAP\",\r\n        \"need to sent email autonomous to verify username\",\r\n        \"test test test test\",\r\n        \"test \"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"planing\": \"Danaithon\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "listTraceability",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/traceability/list-trace",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"traceability",
+								"list-trace"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65d86861716be78b470af388\",\r\n    \"job_order\": \"ABC123456\",\r\n    \"system_requirement\": [\r\n        \"1.need calculate autonomous\",\r\n        \"2.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\",\r\n        \"4.Test Test TEST\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Software Requirement Specification",
+			"item": [
+				{
+					"name": "getReqSpecification",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/software-req/get-specification",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"software-req",
+								"get-specification"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65d86861716be78b470af388\",\r\n    \"job_order\": \"ABC123456\",\r\n    \"system_requirement\": [\r\n        \"1.need calculate autonomous\",\r\n        \"2.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\",\r\n        \"4.Test Test TEST\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "newSpecification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project_id\": \"65dc0fb0d5056036310a6707\",\r\n    \"requirement_code\": \"REQ_004\",\r\n    \"feature_name\": [\r\n        \" Send a link via email for customers to input their own information\",\r\n        \"  Users input data themselves (Send mail)\",\r\n        \" Users can upload or delete documents\",\r\n        \" Logging\"\r\n    ],\r\n    \"description\": \"Create new customer registration. \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/software-req/new-specification",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"software-req",
+								"new-specification"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65d86861716be78b470af388\",\r\n    \"job_order\": \"ABC123456\",\r\n    \"system_requirement\": [\r\n        \"1.need calculate autonomous\",\r\n        \"2.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\",\r\n        \"4.Test Test TEST\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "editReqSpecification",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"software_req_id\": \"65e187a4c17f212b4e0633d8\",\r\n    \"feature_name\": [\r\n        \"  Edit Users can edit the information (Send mail)ss \",\r\n        \" Edit Users can upload or delete documents\",\r\n        \" Edit Logging\"\r\n    ],\r\n    \"description\": \"123Edit customer registration ssss \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/software-req/edit-specification",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"software-req",
+								"edit-specification"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65d86861716be78b470af388\",\r\n    \"job_order\": \"ABC123456\",\r\n    \"system_requirement\": [\r\n        \"1.need calculate autonomous\",\r\n        \"2.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\",\r\n        \"4.Test Test TEST\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "verifiedSoftwareReq",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"software_req_id\": \"65e17a4dc17f212b4e0633d3\",\r\n    \"is_verified\": true,\r\n    \"verified_note\": \"Very good\" // nullable\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/software-req/verified",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"software-req",
+								"verified"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65d86861716be78b470af388\",\r\n    \"job_order\": \"ABC123456\",\r\n    \"system_requirement\": [\r\n        \"1.need calculate autonomous\",\r\n        \"2.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\",\r\n        \"4.Test Test TEST\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "validatedSoftwareReq",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"software_req_id\": \"65e17a4dc17f212b4e0633d3\",\r\n    \"is_validated\": true,\r\n    \"validated_note\": \"Grate!!\" // nullable\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/software-req/validated",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"software-req",
+								"validated"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ex.2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"project_id\": \"65d86861716be78b470af388\",\r\n    \"job_order\": \"ABC123456\",\r\n    \"system_requirement\": [\r\n        \"1.need calculate autonomous\",\r\n        \"2.need to complicate\"\r\n    ],\r\n    \"software_requirement\": [\r\n        \"1.test\",\r\n        \"2.test\",\r\n        \"3.test\",\r\n        \"4.Test Test TEST\"\r\n    ],\r\n    \"responsibility\": [\r\n        {\r\n            \"name\": \"thitiwut\",\r\n            \"position\": \"Engineer\"\r\n        }\r\n    ],\r\n    \"equipments\": [\r\n        \"php\",\r\n        \"nodeJS\",\r\n        \"laravel\",\r\n        \"react\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project-plan/add-planing",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project-plan",
+										"add-planing"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://10.1.8.235/dev/iPMS/iPMS-v5/ipms-v5-laravel/public/index.php/api",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": ""
+		},
+		{
+			"key": "base_url",
+			"value": "https://snc-services.sncformer.com/dev/iPMSISO/public/index.php/api",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "http://10.11.20.57/dev/iPMS/iPMS-v5/ipms-v5-laravel/public/index.php/api",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
